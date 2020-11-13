@@ -1,0 +1,10 @@
+{
+  "item.arcgaia.stormcaller": "Stormcaller",
+  "item.arcgaia.desertkhopesh": "Desert Kohpesh",
+  "item.arcgaia.huntersbow" : "Hunter's Bow",
+  "tooltip.arcgaia.stormcaller.passive.one" : "Landing an attack generates a charge. At three Your next attack summons a Lightning Bolt on-hit and consumes all charges.",
+  "tooltip.arcgaia.desertkhopesh.passive.one" : "Your attacks apply Drought for 3s. Mobs with Drought are set on fire for %js",
+  "tooltip.arcgaia.desertkhopesh.active": "Sand Strike - Summon a Sand Block that hovers infront of you. USE or ATTACK to fire it. Deals damage on impact and applies Drought",
+  "tooltip.arcgaia.huntersbow.passive" : "The Hunt - Killing a mob with this bow grants a Hunt stack for 2s. Stacks Up to 10 times. Hunt grants Damage and Movement Speed."
+
+}
