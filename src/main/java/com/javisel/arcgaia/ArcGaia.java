@@ -1,12 +1,14 @@
 package com.javisel.arcgaia;
 
 import com.javisel.arcgaia.client.renderer.LightningArrowRenderer;
+import com.javisel.arcgaia.common.entities.LightningArrowEntity;
 import com.javisel.arcgaia.common.items.Stormcaller;
 import com.javisel.arcgaia.common.registration.EntityRegistration;
 import com.javisel.arcgaia.common.registration.ItemRegistration;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -67,8 +69,7 @@ public class ArcGaia
             return livingEntity != null && livingEntity.isHandActive() && livingEntity.getActiveItemStack() == itemStack ? 1.0F : 0.0F;
         });
 
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistration.LIGHTNING_ARROW.get(),  new LightningArrowRenderer.RenderFactory());
-
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegistration.LIGHTNING_ARROW.get(), new LightningArrowRenderer.RenderFactory());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

@@ -10,6 +10,7 @@ import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.network.FMLPlayMessages;
 
 public class LightningArrowEntity extends AbstractArrowEntity {
 
@@ -29,6 +30,12 @@ public class LightningArrowEntity extends AbstractArrowEntity {
 
     }
 
+    public LightningArrowEntity(FMLPlayMessages.SpawnEntity spawnEntity, World world) {
+        super((EntityType<? extends AbstractArrowEntity>) EntityRegistration.LIGHTNING_ARROW.get(),world);
+
+
+    }
+
 
     protected void arrowHit(LivingEntity living) {
         super.arrowHit(living);
@@ -44,12 +51,17 @@ public class LightningArrowEntity extends AbstractArrowEntity {
     @Override
     public void tick() {
         super.tick();
+
+        if (world.isRemote) {
+
+            System.out.println("I exist in the client");
+        }
         if (this.inGround) {
             if (this.timeInGround == 0) {
                 LightningBoltEntity lightningBoltEntity = new LightningBoltEntity(EntityType.LIGHTNING_BOLT,this.getEntityWorld());
                 lightningBoltEntity.setPositionAndUpdate(this.getPosX(),this.getPosY(),this.getPosZ());
 
-           //     world.addEntity(lightningBoltEntity);
+                //     world.addEntity(lightningBoltEntity);
 
             }
         }

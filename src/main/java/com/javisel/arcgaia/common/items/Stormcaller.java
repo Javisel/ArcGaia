@@ -66,7 +66,7 @@ public class Stormcaller  extends BowItem  implements IVanishable {
             float velocity = getArrowVelocity( bowcharge);
             if (!((double)velocity < 0.1D)) {
                 boolean flag1 = playerentity.abilities.isCreativeMode || (itemstack.getItem() instanceof ArrowItem && ((ArrowItem)itemstack.getItem()).isInfinite(itemstack, stack, playerentity));
-                if (!worldIn.isRemote) {
+
                     ArrowItem arrowitem = (ArrowItem)(itemstack.getItem() instanceof ArrowItem ? itemstack.getItem() : Items.ARROW);
                     AbstractArrowEntity abstractarrowentity = new LightningArrowEntity(worldIn,playerentity);
 
@@ -102,7 +102,7 @@ public class Stormcaller  extends BowItem  implements IVanishable {
 
                     abstractarrowentity.setPierceLevel((byte) 6);
                     worldIn.addEntity(abstractarrowentity);
-                }
+
 
                 worldIn.playSound((PlayerEntity)null, playerentity.getPosX(), playerentity.getPosY(), playerentity.getPosZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (random.nextFloat() * 0.4F + 1.2F) + velocity * 0.5F);
                 if (!flag1 && !playerentity.abilities.isCreativeMode) {

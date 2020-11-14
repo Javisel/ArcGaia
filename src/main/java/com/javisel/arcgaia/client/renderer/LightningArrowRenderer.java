@@ -39,15 +39,15 @@ public  class LightningArrowRenderer<T extends LightningArrowEntity> extends Ent
 
     @Override
     public boolean shouldRender(T livingEntityIn, ClippingHelper camera, double camX, double camY, double camZ) {
-         boolean yes= super.shouldRender(livingEntityIn, camera, camX, camY, camZ);
+        boolean yes= super.shouldRender(livingEntityIn, camera, camX, camY, camZ);
 
-         System.out.println("Should we render? " + yes);
-         return  yes;
+        System.out.println("Should we render? " + yes);
+        return  yes;
     }
 
     @Override
     public void render(T entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
-       System.out.println("RENDER");
+        System.out.println("RENDER");
         matrixStackIn.push();
         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationYaw, entityIn.rotationYaw) - 90.0F));
         matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationPitch, entityIn.rotationPitch)));
